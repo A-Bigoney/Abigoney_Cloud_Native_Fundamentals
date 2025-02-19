@@ -26,3 +26,6 @@ jobs:
       - name: Push Docker image
         run: |
           docker push neoatari/techtrends:latest
+      
+      - name: Set up Environment File
+        run: echo "DOCKER_IMAGE=neoatari/techtrends:latest" >> $GITHUB_ENV
