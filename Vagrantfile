@@ -4,13 +4,20 @@ ENV["TERM"]="linux"
 # set minimum version for Vagrant
 Vagrant.require_version ">= 2.2.10"
 Vagrant.configure("2") do |config|
-  config.vm.provision "shell",
-    inline: "sudo su - && zypper update && zypper install -y apparmor-parser"
+  # Share the local project directory with the VM
+  config.vm.synced_folder ".", "/vagrant_data"
+    # Provisioning scripts
+  config.vm.provision "shell", inline: <<-SHELL
+    sudo zypper update -y
+    sudo zypper install -y apparmor-parser curl
+    curl -sfL https://get.k3s.io | sudo sh -
+  SHELL
   
   # Set the image for the vagrant box
   config.vm.box = "opensuse/Leap-15.2.x86_64"
   # Set the image version
   config.vm.box_version = "15.2.31.632"
+  
 
   # Forward the ports from the guest VM to the local host machine
   # Forward more ports, as needed
