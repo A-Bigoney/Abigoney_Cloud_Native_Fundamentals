@@ -11,7 +11,7 @@ spec:
     path: helm/techtrends
     helm:
       valueFiles:
-        - values.yaml
+        - values-staging.yaml
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: staging
