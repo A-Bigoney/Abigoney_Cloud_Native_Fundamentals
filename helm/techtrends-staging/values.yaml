@@ -5,6 +5,7 @@ service:
   port: 5111
 
 replicaCount: 3
+replicas: 3
 
 resources:
   requests:
