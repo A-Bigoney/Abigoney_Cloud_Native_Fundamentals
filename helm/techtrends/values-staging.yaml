@@ -4,6 +4,11 @@ namespace:
 service:
   port: 5111
 
+image:
+  pullPolicy: "IfNotPresent"
+  repository: "neoatari/techtrends"
+  tag: "techtrends:latest"
+
 replicaCount: 3
 
 resources:
@@ -18,7 +23,7 @@ livenessProbe:
   httpGet:
     path: "/healthz"
     port: "3111"
-    
+
 readinessProbe:
   httpGet:
     path: "/healthz"

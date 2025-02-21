@@ -6,11 +6,10 @@ service:
 
 image:
   pullPolicy: "IfNotPresent"
-  repository: "neoatari"
-  tag: "techtrends:latest"
+  repository: "neoatari/techtrends"
+  tag: "latest"
 
 replicaCount: 5
-
 containerPort: 3111
 
 resources:
