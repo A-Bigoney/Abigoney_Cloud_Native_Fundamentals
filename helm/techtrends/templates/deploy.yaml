@@ -35,6 +35,6 @@ spec:
           readinessProbe:
             httpGet:
               path: {{ .Values.readinessProbe.path }}
-              port: 3111
+              port: {{ .Values.readinessProbe.port }}
             initialDelaySeconds: 5
             periodSeconds: 10

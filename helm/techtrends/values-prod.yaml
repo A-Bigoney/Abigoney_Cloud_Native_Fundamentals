@@ -21,11 +21,9 @@ resources:
     cpu: "500m"
 
 livenessProbe:
-  httpGet:
     path: "/healthz"
     port: 3111
 
 readinessProbe:
-  httpGet:
     path: "/healthz"
     port: 3111
