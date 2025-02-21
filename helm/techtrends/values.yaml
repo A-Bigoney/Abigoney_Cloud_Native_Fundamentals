@@ -2,7 +2,7 @@ namespace:
   name: prod
 
 service:
-  port: 7111
+  port: 4111
 
 image:
   pullPolicy: Always
