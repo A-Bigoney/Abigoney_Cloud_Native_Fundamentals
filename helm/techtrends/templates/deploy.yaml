@@ -4,7 +4,7 @@ metadata:
   name: techtrends
   namespace: sandbox
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: techtrends
@@ -19,6 +19,8 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3111
+            hostPort: 7111
+            protocol: TCP
           resources:
             requests:
               cpu: "250m"
@@ -30,11 +32,15 @@ spec:
             httpGet:
               path: /healthz
               port: 3111
+              hostPort: 7111
+              protocol: TCP
             initialDelaySeconds: 5
             periodSeconds: 10
           readinessProbe:
             httpGet:
               path: /healthz
               port: 3111
+              hostPort: 7111
+              protocol: TCP
             initialDelaySeconds: 5
             periodSeconds: 10
