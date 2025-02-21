@@ -1,18 +1,35 @@
+# Default values for TechTrends application
+
 namespace:
-  name: prod
+  name: sandbox
 
 service:
   port: 4111
+  targetPort: 3111
+  protocol: TCP
+  type: ClusterIP
 
 image:
-  pullPolicy: Always
+  repository: techtrends
+  tag: latest
+  pullPolicy: IfNotPresent
 
-replicaCount: 5
+replicaCount: 1
 
 resources:
   requests:
-    memory: "128Mi"
-    cpu: "350m"
+    cpu: "250m"
+    memory: "64Mi"
   limits:
-    memory: "256Mi"
     cpu: "500m"
+    memory: "128Mi"
+
+containerPort: 3111
+
+livenessProbe:
+  path: /healthz
+  port: 3111
+
+readinessProbe:
+  path: /healthz
+  port: 3111

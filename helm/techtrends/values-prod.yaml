@@ -3,6 +3,8 @@ namespace:
 
 service:
   port: 7111
+  targetPort: 3111
+  protocol: TCP
 
 image:
   pullPolicy: "IfNotPresent"

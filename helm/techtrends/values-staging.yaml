@@ -2,7 +2,9 @@ namespace:
   name: staging
 
 service:
-  port: "5111"
+  port: 5111
+  targetPort: 3111
+  protocol: TCP
 
 image:
   pullPolicy: "IfNotPresent"
@@ -10,7 +12,7 @@ image:
   tag: "latest"
 
 replicaCount: 3
-containerPort: "3111"
+containerPort: 3111
 
 resources:
   requests:
@@ -22,8 +24,8 @@ resources:
 
 livenessProbe:
     path: "/healthz"
-    port: "3111"
+    port: 3111
 
 readinessProbe:
     path: "/healthz"
-    port: "3111"
+    port: 3111
