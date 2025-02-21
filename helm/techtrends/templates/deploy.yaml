@@ -16,6 +16,7 @@ spec:
       containers:
         - name: techtrends
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.containerPort }}
           resources:
