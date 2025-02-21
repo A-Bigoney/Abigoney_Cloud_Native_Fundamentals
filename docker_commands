@@ -20,18 +20,35 @@ $ docker logs -f techtrends
  * Debug mode: off
 2025-02-17 21:55:54,383 - WARNING -  * Running on all addresses.
    WARNING: This is a development server. Do not use it in a production deployment.
-2025-02-17 21:55:54,383 - INFO -  * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
-2025-02-17 21:56:21,886 - INFO - 172.17.0.1 - - [17/Feb/2025 21:56:21] "GET / HTTP/1.1" 200 -
-2025-02-17 21:56:21,915 - INFO - 172.17.0.1 - - [17/Feb/2025 21:56:21] "GET /static/css/main.css HTTP/1.1" 304 -
-2025-02-17 21:56:27,081 - INFO - 172.17.0.1 - - [17/Feb/2025 21:56:27] "GET /create HTTP/1.1" 200 -
-2025-02-17 21:56:27,107 - INFO - 172.17.0.1 - - [17/Feb/2025 21:56:27] "GET /static/css/main.css HTTP/1.1" 304 -
-2025-02-17 21:56:43,980 - INFO - New article "Azarah is cool" created.
-2025-02-17 21:56:43,980 - INFO - 172.17.0.1 - - [17/Feb/2025 21:56:43] "POST /create HTTP/1.1" 302 -
-2025-02-17 21:56:43,985 - INFO - 172.17.0.1 - - [17/Feb/2025 21:56:43] "GET / HTTP/1.1" 200 -
-2025-02-17 21:56:44,012 - INFO - 172.17.0.1 - - [17/Feb/2025 21:56:44] "GET /static/css/main.css HTTP/1.1" 304 -
-2025-02-17 21:56:46,143 - DEBUG - Querying for post with ID: 7
-2025-02-17 21:56:46,144 - INFO - Article "Azarah is cool" retrieved!
-2025-02-17 21:56:46,147 - INFO - 172.17.0.1 - - [17/Feb/2025 21:56:46] "GET /7 HTTP/1.1" 200 -
-2025-02-17 21:56:46,179 - INFO - 172.17.0.1 - - [17/Feb/2025 21:56:46] "GET /static/css/main.css HTTP/1.1" 304 -
-2025-02-17 21:57:05,194 - INFO - 172.17.0.1 - - [17/Feb/2025 21:57:05] "GET /metrics HTTP/1.1" 200 -
-2025-02-17 21:57:12,369 - INFO - 172.17.0.1 - - [17/Feb/2025 21:57:12] "GET /healthz HTTP/1.1" 200 -
+21/02/2025, 21:21:22,  * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+21/02/2025, 21:22:03, 172.17.0.1 - - [21/Feb/2025 21:22:03] "GET / HTTP/1.1" 200 -
+21/02/2025, 21:22:03, 172.17.0.1 - - [21/Feb/2025 21:22:03] "GET /static/css/main.css HTTP/1.1" 200 -
+21/02/2025, 21:22:04, 172.17.0.1 - - [21/Feb/2025 21:22:04] "GET /favicon.ico HTTP/1.1" 404 -
+21/02/2025, 21:22:09, Querying for post with ID: 6
+21/02/2025, 21:22:09, Article "Kubernetes Certification" retrieved!
+21/02/2025, 21:22:09, 172.17.0.1 - - [21/Feb/2025 21:22:09] "GET /6 HTTP/1.1" 200 -
+21/02/2025, 21:22:09, 172.17.0.1 - - [21/Feb/2025 21:22:09] "GET /static/css/main.css HTTP/1.1" 304 -
+21/02/2025, 21:22:14, Querying for post with ID: 7
+21/02/2025, 21:22:14, No post found with ID: 7
+21/02/2025, 21:22:14, Article with ID 7 not found. Returning 404.
+21/02/2025, 21:22:14, 172.17.0.1 - - [21/Feb/2025 21:22:14] "GET /7 HTTP/1.1" 404 -
+21/02/2025, 21:22:14, 172.17.0.1 - - [21/Feb/2025 21:22:14] "GET /static/css/main.css HTTP/1.1" 304 -
+21/02/2025, 21:22:14, Article with ID 7 not found. Returning 404.
+21/02/2025, 21:22:14, 172.17.0.1 - - [21/Feb/2025 21:22:14] "GET /7 HTTP/1.1" 404 -
+21/02/2025, 21:22:14, Article with ID 7 not found. Returning 404.
+21/02/2025, 21:22:14, Article with ID 7 not found. Returning 404.
+21/02/2025, 21:22:14, 172.17.0.1 - - [21/Feb/2025 21:22:14] "GET /7 HTTP/1.1" 404 -
+21/02/2025, 21:22:14, 172.17.0.1 - - [21/Feb/2025 21:22:14] "GET /static/css/main.css HTTP/1.1" 304 -
+21/02/2025, 21:23:23, About Us page retrieved.
+21/02/2025, 21:23:23, 172.17.0.1 - - [21/Feb/2025 21:23:23] "GET /about HTTP/1.1" 200 -
+21/02/2025, 21:23:23, 172.17.0.1 - - [21/Feb/2025 21:23:23] "GET /static/css/main.css HTTP/1.1" 304 -
+21/02/2025, 21:23:28, 172.17.0.1 - - [21/Feb/2025 21:23:28] "GET /create HTTP/1.1" 200 -
+21/02/2025, 21:23:28, 172.17.0.1 - - [21/Feb/2025 21:23:28] "GET /static/css/main.css HTTP/1.1" 304 -
+21/02/2025, 21:23:43, New article "Now post" created.
+21/02/2025, 21:23:43, 172.17.0.1 - - [21/Feb/2025 21:23:43] "POST /create HTTP/1.1" 302 -
+21/02/2025, 21:23:43, 172.17.0.1 - - [21/Feb/2025 21:23:43] "GET / HTTP/1.1" 200 -
+21/02/2025, 21:23:43, 172.17.0.1 - - [21/Feb/2025 21:23:43] "GET /static/css/main.css HTTP/1.1" 304 -
+21/02/2025, 21:23:46, Querying for post with ID: 7
+21/02/2025, 21:23:46, Article "Now post" retrieved!
+21/02/2025, 21:23:46, 172.17.0.1 - - [21/Feb/2025 21:23:46] "GET /7 HTTP/1.1" 200 -
+21/02/2025, 21:23:47, 172.17.0.1 - - [21/Feb/2025 21:23:47] "GET /static/css/main.css HTTP/1.1" 304 -
