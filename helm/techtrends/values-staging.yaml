@@ -7,7 +7,7 @@ service:
 image:
   pullPolicy: "IfNotPresent"
   repository: "neoatari/techtrends"
-  tag: "techtrends:latest"
+  tag: "latest"
 
 replicaCount: 3
 
