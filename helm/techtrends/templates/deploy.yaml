@@ -32,15 +32,11 @@ spec:
             httpGet:
               path: /healthz
               port: 3111
-              hostPort: 7111
-              protocol: TCP
             initialDelaySeconds: 5
             periodSeconds: 10
           readinessProbe:
             httpGet:
               path: /healthz
               port: 3111
-              hostPort: 7111
-              protocol: TCP
             initialDelaySeconds: 5
             periodSeconds: 10
