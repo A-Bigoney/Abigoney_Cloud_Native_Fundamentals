@@ -2,12 +2,12 @@ namespace:
   name: staging
 
 service:
-  port: 5111
+  port: "5111"
 
 image:
   pullPolicy: "IfNotPresent"
   repository: "neoatari/techtrends"
-  tag: "techtrends:latest"
+  tag: "latest"
 
 replicaCount: 3
 
