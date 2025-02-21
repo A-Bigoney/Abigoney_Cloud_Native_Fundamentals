@@ -11,6 +11,8 @@ image:
 
 replicaCount: 5
 
+containerPort: 3111
+
 resources:
   requests:
     memory: "128Mi"
