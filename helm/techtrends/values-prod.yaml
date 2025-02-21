@@ -23,9 +23,9 @@ resources:
 livenessProbe:
   httpGet:
     path: "/healthz"
-    port: "3111"
+    port: 3111
 
 readinessProbe:
   httpGet:
     path: "/healthz"
-    port: "3111"
+    port: 3111
