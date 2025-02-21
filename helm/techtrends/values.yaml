@@ -2,8 +2,8 @@ namespace:
   name: sandbox
 
 service:
-  port: 4111
-  targetPort: 3111
+  port: "4111"
+  targetPort: "3111"
   protocol: TCP
   type: ClusterIP
 
@@ -12,8 +12,8 @@ image:
   repository: "neoatari/techtrends"
   tag: "latest"
 
-replicaCount: 5
-containerPort: 3111
+replicaCount: 1
+containerPort: "3111"
 
 resources:
   requests:
@@ -26,9 +26,9 @@ resources:
 livenessProbe:
   httpGet:
     path: "/healthz"
-    port: 3111
+    port: "3111"
 
 readinessProbe:
   httpGet:
     path: "/healthz"
-    port: 3111
+    port: "3111"
