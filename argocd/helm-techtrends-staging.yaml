@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/A-Bigoney/Abigoney_Cloud_Native_Fundamentals.git'
     targetRevision: HEAD
-    path: helm/techtrends-staging
+    path: helm/techtrends
     helm:
       valueFiles:
         - values-staging.yaml
