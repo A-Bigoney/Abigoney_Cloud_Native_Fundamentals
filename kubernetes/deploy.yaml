@@ -16,6 +16,7 @@ spec:
       containers:
         - name: techtrends
           image: neoatari/techtrends:latest
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3111
           resources:
