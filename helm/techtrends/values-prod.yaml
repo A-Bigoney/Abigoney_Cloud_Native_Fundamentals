@@ -1,8 +1,11 @@
 namespace:
-  name: prod
+  name: sandbox
 
 service:
   port: 7111
+  targetPort: 3111
+  protocol: TCP
+  type: ClusterIP
 
 image:
   pullPolicy: "IfNotPresent"
