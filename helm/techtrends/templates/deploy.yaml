@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: techtrends
-          image: neoatari/techtrends:latest
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.containerPort }}
