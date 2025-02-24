@@ -12,43 +12,35 @@ docker logs -f techtrends
 
 ## Logs from the container running the TechTrends application
 # TODO: paste logs from the Docker container 
-$ docker logs -f techtrends
+PS C:\Users\abigoney\Documents\School\NanoDegree\Cloud_Native_Fundamentals\project> docker logs -f techtrends   
  * Serving Flask app 'app' (lazy loading)
  * Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
    Use a production WSGI server instead.
  * Debug mode: off
-2025-02-17 21:55:54,383 - WARNING -  * Running on all addresses.
+24/02/2025 18:23:16 - WARNING -  * Running on all addresses.
    WARNING: This is a development server. Do not use it in a production deployment.
-21/02/2025, 21:21:22,  * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
-21/02/2025, 21:22:03, 172.17.0.1 - - [21/Feb/2025 21:22:03] "GET / HTTP/1.1" 200 -
-21/02/2025, 21:22:03, 172.17.0.1 - - [21/Feb/2025 21:22:03] "GET /static/css/main.css HTTP/1.1" 200 -
-21/02/2025, 21:22:04, 172.17.0.1 - - [21/Feb/2025 21:22:04] "GET /favicon.ico HTTP/1.1" 404 -
-21/02/2025, 21:22:09, Querying for post with ID: 6
-21/02/2025, 21:22:09, Article "Kubernetes Certification" retrieved!
-21/02/2025, 21:22:09, 172.17.0.1 - - [21/Feb/2025 21:22:09] "GET /6 HTTP/1.1" 200 -
-21/02/2025, 21:22:09, 172.17.0.1 - - [21/Feb/2025 21:22:09] "GET /static/css/main.css HTTP/1.1" 304 -
-21/02/2025, 21:22:14, Querying for post with ID: 7
-21/02/2025, 21:22:14, No post found with ID: 7
-21/02/2025, 21:22:14, Article with ID 7 not found. Returning 404.
-21/02/2025, 21:22:14, 172.17.0.1 - - [21/Feb/2025 21:22:14] "GET /7 HTTP/1.1" 404 -
-21/02/2025, 21:22:14, 172.17.0.1 - - [21/Feb/2025 21:22:14] "GET /static/css/main.css HTTP/1.1" 304 -
-21/02/2025, 21:22:14, Article with ID 7 not found. Returning 404.
-21/02/2025, 21:22:14, 172.17.0.1 - - [21/Feb/2025 21:22:14] "GET /7 HTTP/1.1" 404 -
-21/02/2025, 21:22:14, Article with ID 7 not found. Returning 404.
-21/02/2025, 21:22:14, Article with ID 7 not found. Returning 404.
-21/02/2025, 21:22:14, 172.17.0.1 - - [21/Feb/2025 21:22:14] "GET /7 HTTP/1.1" 404 -
-21/02/2025, 21:22:14, 172.17.0.1 - - [21/Feb/2025 21:22:14] "GET /static/css/main.css HTTP/1.1" 304 -
-21/02/2025, 21:23:23, About Us page retrieved.
-21/02/2025, 21:23:23, 172.17.0.1 - - [21/Feb/2025 21:23:23] "GET /about HTTP/1.1" 200 -
-21/02/2025, 21:23:23, 172.17.0.1 - - [21/Feb/2025 21:23:23] "GET /static/css/main.css HTTP/1.1" 304 -
-21/02/2025, 21:23:28, 172.17.0.1 - - [21/Feb/2025 21:23:28] "GET /create HTTP/1.1" 200 -
-21/02/2025, 21:23:28, 172.17.0.1 - - [21/Feb/2025 21:23:28] "GET /static/css/main.css HTTP/1.1" 304 -
-21/02/2025, 21:23:43, New article "Now post" created.
-21/02/2025, 21:23:43, 172.17.0.1 - - [21/Feb/2025 21:23:43] "POST /create HTTP/1.1" 302 -
-21/02/2025, 21:23:43, 172.17.0.1 - - [21/Feb/2025 21:23:43] "GET / HTTP/1.1" 200 -
-21/02/2025, 21:23:43, 172.17.0.1 - - [21/Feb/2025 21:23:43] "GET /static/css/main.css HTTP/1.1" 304 -
-21/02/2025, 21:23:46, Querying for post with ID: 7
-21/02/2025, 21:23:46, Article "Now post" retrieved!
-21/02/2025, 21:23:46, 172.17.0.1 - - [21/Feb/2025 21:23:46] "GET /7 HTTP/1.1" 200 -
-21/02/2025, 21:23:47, 172.17.0.1 - - [21/Feb/2025 21:23:47] "GET /static/css/main.css HTTP/1.1" 304 -
+24/02/2025 18:23:16 - INFO -  * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+24/02/2025 18:23:50 - DEBUG - Querying for post with ID: 7
+24/02/2025 18:23:50 - WARNING - No post found with ID: 7
+24/02/2025 18:23:50 - WARNING - Article with ID 7 not found. Returning 404.
+24/02/2025 18:23:50 - INFO - 172.17.0.1 - - [24/Feb/2025 18:23:50] "GET /7 HTTP/1.1" 404 -
+24/02/2025 18:23:50 - INFO - 172.17.0.1 - - [24/Feb/2025 18:23:50] "GET /static/css/main.css HTTP/1.1" 304 -
+24/02/2025 18:23:55 - INFO - Index page accessed.
+24/02/2025 18:23:55 - INFO - 172.17.0.1 - - [24/Feb/2025 18:23:55] "GET / HTTP/1.1" 200 -
+24/02/2025 18:23:55 - INFO - 172.17.0.1 - - [24/Feb/2025 18:23:55] "GET /static/css/main.css HTTP/1.1" 304 -
+24/02/2025 18:23:57 - DEBUG - Querying for post with ID: 2
+24/02/2025 18:23:57 - INFO - Article "KubeCon + CloudNativeCon 2021" retrieved.
+24/02/2025 18:23:57 - INFO - 172.17.0.1 - - [24/Feb/2025 18:23:57] "GET /2 HTTP/1.1" 200 -
+24/02/2025 18:23:57 - INFO - 172.17.0.1 - - [24/Feb/2025 18:23:57] "GET /static/css/main.css HTTP/1.1" 304 -
+24/02/2025 18:23:59 - INFO - 172.17.0.1 - - [24/Feb/2025 18:23:59] "GET /create HTTP/1.1" 200 -
+24/02/2025 18:23:59 - INFO - 172.17.0.1 - - [24/Feb/2025 18:23:59] "GET /static/css/main.css HTTP/1.1" 304 -
+24/02/2025 18:24:05 - INFO - New article "TEST" created.
+24/02/2025 18:24:05 - INFO - 172.17.0.1 - - [24/Feb/2025 18:24:05] "POST /create HTTP/1.1" 302 -
+24/02/2025 18:24:05 - INFO - Index page accessed.
+24/02/2025 18:24:05 - INFO - 172.17.0.1 - - [24/Feb/2025 18:24:05] "GET / HTTP/1.1" 200 -
+24/02/2025 18:24:05 - INFO - 172.17.0.1 - - [24/Feb/2025 18:24:05] "GET /static/css/main.css HTTP/1.1" 304 -
+24/02/2025 18:24:07 - DEBUG - Querying for post with ID: 7
+24/02/2025 18:24:07 - INFO - Article "TEST" retrieved.
+24/02/2025 18:24:07 - INFO - 172.17.0.1 - - [24/Feb/2025 18:24:07] "GET /7 HTTP/1.1" 200 -
+24/02/2025 18:24:07 - INFO - 172.17.0.1 - - [24/Feb/2025 18:24:07] "GET /static/css/main.css HTTP/1.1" 304 -

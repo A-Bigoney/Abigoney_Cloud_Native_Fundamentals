@@ -2,18 +2,22 @@ import sqlite3
 import logging
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
+import sys
 
-# Set up logging
-#logging.basicConfig(level=logging.DEBUG, format='%(levelname)s:%(name)s:%(message)s')
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s, %(message)s', datefmt='%d/%m/%Y, %H:%M:%S')
+# Define the Flask application
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'your secret key'
+
+db_connection_counter = 0
+
+# Set up logging to output to STDERR
+logging.basicConfig(level=logging.DEBUG, 
+                    format='%(asctime)s - %(levelname)s - %(message)s', 
+                    datefmt='%d/%m/%Y %H:%M:%S',
+                    stream=sys.stderr)
 
 # Create a logger for the application
 app_logger = logging.getLogger('app')
-app_logger.setLevel(logging.DEBUG)
-
-# Create a logger for werkzeug
-werkzeug_logger = logging.getLogger('werkzeug')
-werkzeug_logger.setLevel(logging.INFO)
 
 # Function to get a database connection.
 def get_db_connection():
@@ -24,18 +28,13 @@ def get_db_connection():
 # Function to get a post using its ID
 def get_post(post_id):
     connection = get_db_connection()
+    print(f'Querying for post with ID: {post_id}')
     app_logger.debug(f'Querying for post with ID: {post_id}')
     post = connection.execute('SELECT * FROM posts WHERE id = ?', (post_id,)).fetchone()
     if post is None:
-        app_logger.debug(f'No post found with ID: {post_id}')
+        app_logger.warning(f'No post found with ID: {post_id}')
     connection.close()
     return post
-
-# Define the Flask application
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your secret key'
-
-db_connection_counter = 0
 
 # Define the main route of the web application 
 @app.route('/')
@@ -45,6 +44,8 @@ def index():
     global db_connection_counter  # Declare that we are using the global variable
     db_connection_counter += 1  # Increment the connection count
     connection.close()
+    print('Index page accessed.')
+    app_logger.info('Index page accessed.')
     return render_template('index.html', posts=posts)
 
 # Define how each individual article is rendered 
@@ -55,13 +56,15 @@ def post(post_id):
         app_logger.warning(f'Article with ID {post_id} not found. Returning 404.')
         return render_template('404.html'), 404
     else:
-        app_logger.info(f'Article "{post["title"]}" retrieved!')
+        print(f'Article "{post["title"]}" retrieved.')
+        app_logger.info(f'Article "{post["title"]}" retrieved.')
         return render_template('post.html', post=post)
 
 # Define the About Us page
 @app.route('/about')
 def about():
-    app_logger.info('About Us page retrieved.')
+    print('About Us page accessed.')
+    app_logger.info('About Us page accessed.')
     return render_template('about.html')
 
 # Define the post creation functionality 
@@ -79,6 +82,7 @@ def create():
                          (title, content))
             connection.commit()
             connection.close()
+            print(f'New article "{title}" created.')
             app_logger.info(f'New article "{title}" created.')
             return redirect(url_for('index'))
 
