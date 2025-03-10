@@ -44,3 +44,23 @@ PS C:\Users\abigoney\Documents\School\NanoDegree\Cloud_Native_Fundamentals\proje
 24/02/2025 18:24:07 - INFO - Article "TEST" retrieved.
 24/02/2025 18:24:07 - INFO - 172.17.0.1 - - [24/Feb/2025 18:24:07] "GET /7 HTTP/1.1" 200 -
 24/02/2025 18:24:07 - INFO - 172.17.0.1 - - [24/Feb/2025 18:24:07] "GET /static/css/main.css HTTP/1.1" 304 -
+
+
+## Comand to run on the VM running Kubernetes to get ArgoCD running
+vagrent up
+vagrent ssh
+sudo su -
+cd  /vagrant_data/argocd/
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+kubectl apply -n argocd -f argocd-server-nodeport.yaml
+kubectl get services -n argocd
+kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath='{.data.password}' | base64 --decode
+
+https://192.168.50.4:30008
+
+sudo su -
+cd  /vagrant_data/argocd/
+kubectl apply -f helm-techtrends-prod.yaml --v=5
+kubectl apply -f helm-techtrends-staging.yaml --v=5
+
